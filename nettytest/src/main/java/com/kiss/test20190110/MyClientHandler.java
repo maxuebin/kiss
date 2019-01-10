@@ -19,4 +19,9 @@ public class MyClientHandler extends SimpleChannelInboundHandler<String>{
         ctx.close();
     }
 
+
+    @Override
+    public void channelActive(ChannelHandlerContext ctx) throws Exception {
+        ctx.writeAndFlush("来自客户端.....");
+    }
 }
