@@ -38,7 +38,7 @@ public class MyChatServerHandler extends SimpleChannelInboundHandler<String> {
     @Override
     public void handlerAdded(ChannelHandlerContext ctx) throws Exception {
         Channel channel = ctx.channel();
-
+        System.out.println("一共连接数:"+channelGroup.size());
         channelGroup.writeAndFlush("[服务器]-" + channel.remoteAddress() + "加入\n");
 
         channelGroup.add(channel);
