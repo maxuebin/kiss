@@ -13,10 +13,6 @@ import io.netty.util.CharsetUtil;
 public class MyChatClientHandler extends SimpleChannelInboundHandler<String> {
     @Override
     protected void channelRead0(ChannelHandlerContext ch, String s) throws Exception {
-        ChannelPipeline pipeline = ch.pipeline();
-        pipeline.addLast(new DelimiterBasedFrameDecoder(4096, Delimiters.lineDelimiter()));
-        pipeline.addLast(new StringEncoder(CharsetUtil.UTF_8));
-        pipeline.addLast(new StringDecoder(CharsetUtil.UTF_8));
-        pipeline.addLast(new MyChatClientHandler());
+        System.out.println(s);
     }
 }

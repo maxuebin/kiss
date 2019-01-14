@@ -11,7 +11,7 @@ import java.util.Optional;
 
 public class MyChatServerHandler extends SimpleChannelInboundHandler<String> {
 
-    private ChannelGroup channelGroup = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
+    private static ChannelGroup channelGroup = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE); //instance
 
 
     @Override
@@ -56,6 +56,9 @@ public class MyChatServerHandler extends SimpleChannelInboundHandler<String> {
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         Channel channel = ctx.channel();
         System.out.println(channel.remoteAddress()+"上线了....");
+
+
+
     }
 
     @Override
